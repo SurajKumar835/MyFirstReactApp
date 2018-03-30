@@ -10,7 +10,8 @@ class Projects extends Component {
       });
     }
 
-    return <div className="Projects">{projectItems}</div>;
+    return <div className="Projects">
+    <h3>Latest projects</h3>{projectItems}</div>;
   }
 }
 
