@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 
 class AddProject extends Component {
+  constructor(){
+    super();
+    this.state={
+      newProjects:{}
+    }
+  }
   static defaultProps={
     categories: ['WebDesign1', 'WebDesign2','WebDesign3']
+  }
+  handleSubmit(e)
+  {
+    console.log("submit");
+    e.preventDefault();
   }
   render() {
     let categoryOption = this.props.categories.map(category => {return <option key={category} value="category">
     {category}</option>});
-    return <div>
+    return (
+      <div>
     <h3>Add Project</h3>
-    <form>
+    <form onSubmit={this.handleSubmit.bind(this)}>
     <div>
       <label>Title</label><br/>
-      <input type='text' ref=""/>
+      <input type='text' ref="title"/>
       </div>
     <div>
       <label>Category</label><br />
@@ -20,8 +32,10 @@ class AddProject extends Component {
             {categoryOption}
       </select>
     </div>
+    <input type="submit" value="click!"/>
     </form>
-    </div>;
+    </div>
+    );
   }
 }
 
