@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from './Components/Projects';
+import AddProject from './Components/AddProject';
 
 class App extends Component {
   constructor(){
@@ -29,7 +30,7 @@ this.setState({projects:[
   render() {
     return (
       <div className="App">
-      My FirstApp
+      <AddProject/>
       <Projects projects={this.state.projects}/>
       </div>
     );
