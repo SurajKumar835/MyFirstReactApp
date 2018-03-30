@@ -1,2 +1,0 @@
-# MyFirstReactApp
-Created with CodeSandbox
