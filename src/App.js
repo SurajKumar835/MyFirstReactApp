@@ -27,10 +27,16 @@ this.setState({projects:[
 ]});
 }
 
+  handleAddProjects(project){
+    let projects=this.state.projects;
+    projects.push(project);
+    this.setState({projects:projects});
+  }
+
   render() {
     return (
       <div className="App">
-      <AddProject/>
+      <AddProject addProject={this.handleAddProjects.bind(this)}/>
       <Projects projects={this.state.projects}/>
       </div>
     );
